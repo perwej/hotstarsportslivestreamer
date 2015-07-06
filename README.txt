@@ -24,6 +24,8 @@ first you can delete hotstarlivestreamer.sh it's for linux users
 
 Dependencies for windows XP (Microsoft Visual C++ 2008 Redistributable Package)
 
+usually windows 7 and 8 Microsoft Visual C++ already included
+
 other dependencies are included in tools (livestreamer 1.12.2 and php5.4)
 
 double clic on hotstarlivestreamer.bat
