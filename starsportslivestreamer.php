@@ -21,14 +21,11 @@ $json="http://m.starsports.com/syndicationdata/newmobile/video/video_details/$pi
 $showc = file_get_contents($json, false, $context);
 $Video=json_decode($showc)->Video;
 $pid=$Video->{'VideoId'};
-
-echo "$pid\n";
 goto endtest;
 
 
 
 novod:
-echo "no vod\n";
 if($testlink2){  
 			goto yeslive;
 			} 
