@@ -90,14 +90,14 @@ $m3u8final=str_replace("http","hlsvariant://http",$m3u8final);
 
 
 
-if(isset($argv[2])){
+if(isset($argv[3])){
 		echo "Starting livestreamer...\n\n";
 		echo shell_exec("$argv[4]livestreamer  \"$m3u8final\" \"$argv[2]\" -o \"$argv[3]$filename.ts\" &");
 		echo "Done.\n";
 		}
 		else{ 
 		echo "Starting livestreamer...\n\n";
-			echo shell_exec("livestreamer  \"$m3u8final\"  &");
+			echo shell_exec("$argv[2]livestreamer  \"$m3u8final\"  &");
 		}
 
 
