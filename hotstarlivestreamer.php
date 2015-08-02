@@ -56,10 +56,9 @@ if ($last==$testl){
 
 		$filename= "'$contentTitle'_'$episodeNumber'_'$episodeTitle'";
 
-		$filename= str_replace("'","",$filename); $filename= str_replace(":","",$filename);
-
-		$filename= str_replace(",","",$filename); $filename= str_replace("!","",$filename); 
-		$filename= str_replace("&","",	$filename);
+		$filename=iconv('UTF-8', 'ISO-8859-1//TRANSLIT//IGNORE', $filename);
+		
+		$filename = preg_replace('/[^A-Za-z0-9_\. -]/', '', $filename);
 
 		$json="http://getcdn.hotstar.com/AVS/besc?action=GetCDN&asJson=Y&channel=IOS&id=$argv[2]&type=VOD";
 
@@ -141,7 +140,9 @@ else{
 
 	$filename= "'$contentTitle'_'$episodeNumber'_'$episodeTitle'";
 
-	$filename= str_replace("'","",$filename); $filename= str_replace(":","",$filename);
+	$filename=iconv('UTF-8', 'ISO-8859-1//TRANSLIT//IGNORE', $filename);
+		
+	$filename = preg_replace('/[^A-Za-z0-9_\. -]/', '', $filename);
 
 	$test=file_get_contents($json, false, $context);
 
